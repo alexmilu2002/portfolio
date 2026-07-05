@@ -29,9 +29,7 @@ const LAYERS = [
 
 const layerEls = Array.from(document.querySelectorAll('.pl-layer'));
 const plStage  = document.getElementById('plStage');
-const scrollCue= document.getElementById('scrollCue');
 const mast     = document.getElementById('mast');
-const mastC    = document.getElementById('mastC');
 const progress = document.getElementById('progress');
 
 let tmx = 0, tmy = 0, smx = 0, smy = 0;
@@ -63,10 +61,8 @@ function frame(now) {
   // Hero opacity fade on scroll
   const heroFade = Math.max(0, 1 - sy / (vh * 0.75));
   plStage.style.opacity = heroFade;
-  if (scrollCue && sy > 8) scrollCue.style.opacity = Math.max(0, 1 - sy / (vh * 0.25));
 
   mast.classList.toggle('on', sy > 60);
-  mastC.classList.toggle('vis', sy > vh * 0.55);
 
   // Hero parallax + entrance for each layer
   layerEls.forEach((el, i) => {
