@@ -12,7 +12,7 @@ function splitNode(node) {
           out.appendChild(document.createTextNode(p));
         } else {
           const s = document.createElement('span');
-          s.className = 'rw';
+          s.className = 'reveal-word';
           s.textContent = p;
           out.appendChild(s);
         }
@@ -33,7 +33,7 @@ document.querySelectorAll('.split-words').forEach(el => {
   const frag = splitNode(el);
   el.innerHTML = '';
   el.appendChild(frag);
-  el.querySelectorAll('.rw').forEach((w, i) => {
+  el.querySelectorAll('.reveal-word').forEach((w, i) => {
     w.style.transitionDelay = `${i * 0.08}s`;
   });
 });
@@ -41,7 +41,7 @@ document.querySelectorAll('.split-words').forEach(el => {
 // ════════════════════════════════════════════════════════════
 // MAGNETIC HOVER on internal links
 // ════════════════════════════════════════════════════════════
-document.querySelectorAll('.plate-link, .case-back, .mast-r a').forEach(el => {
+document.querySelectorAll('.project-link, .case-back, .site-nav a').forEach(el => {
   el.addEventListener('mousemove', e => {
     const r = el.getBoundingClientRect();
     const dx = e.clientX - (r.left + r.width  / 2);
@@ -54,16 +54,16 @@ document.querySelectorAll('.plate-link, .case-back, .mast-r a').forEach(el => {
 // ════════════════════════════════════════════════════════════
 // SCROLL REVEAL — bidirectional (rewinds on scroll up)
 // ════════════════════════════════════════════════════════════
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('on');
-      e.target.querySelectorAll?.('.split-words').forEach(w => w.classList.add('on'));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      entry.target.querySelectorAll?.('.split-words').forEach(w => w.classList.add('is-visible'));
     } else {
-      e.target.classList.remove('on');
-      e.target.querySelectorAll?.('.split-words').forEach(w => w.classList.remove('on'));
+      entry.target.classList.remove('is-visible');
+      entry.target.querySelectorAll?.('.split-words').forEach(w => w.classList.remove('is-visible'));
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.rv, .split-words').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal, .split-words').forEach(el => observer.observe(el));

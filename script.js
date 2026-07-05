@@ -1,14 +1,14 @@
 // ════════════════════════════════════════════════════════════
 // LETTER SPLIT for hero main name (layer 3)
 // ════════════════════════════════════════════════════════════
-document.querySelectorAll('.pl-layer[data-l="3"] [data-letters]').forEach((el, wordIdx) => {
+document.querySelectorAll('.hero-name-layer[data-layer="3"] [data-letters]').forEach((el, wordIdx) => {
   const text = el.textContent;
   el.textContent = '';
   // Word delays: Alex starts 1.6s (after curtain), Milu 2.0s
   const wordStart = 1.6 + wordIdx * 0.4;
   text.split('').forEach((ch, i) => {
     const span = document.createElement('span');
-    span.className = 'ltr';
+    span.className = 'hero-letter';
     span.textContent = ch;
     span.style.setProperty('--d', (wordStart + i * 0.07) + 's');
     el.appendChild(span);
@@ -27,10 +27,10 @@ const LAYERS = [
   { scroll:-0.12, mx:-0.010, my:-0.006, baseScale: 0.92, entranceMul: 1.7,  delay: 1700, dur: 1500 },
 ];
 
-const layerEls = Array.from(document.querySelectorAll('.pl-layer'));
-const plStage  = document.getElementById('plStage');
-const mast     = document.getElementById('mast');
-const progress = document.getElementById('progress');
+const layerEls    = Array.from(document.querySelectorAll('.hero-name-layer'));
+const heroNameStage = document.getElementById('heroNameStage');
+const siteHeader  = document.getElementById('siteHeader');
+const scrollProgress = document.getElementById('scrollProgress');
 
 let tmx = 0, tmy = 0, smx = 0, smy = 0;
 const EASE = 0.07;
@@ -45,7 +45,7 @@ function easeOutCubic(t){return 1 - Math.pow(1 - t, 3)}
 function lerp(a,b,t){return a+(b-a)*t}
 function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v))}
 
-const arts = Array.from(document.querySelectorAll('.art'));
+const projectImages = Array.from(document.querySelectorAll('.project-image-inner'));
 
 function frame(now) {
   smx += (tmx - smx) * EASE;
@@ -56,13 +56,13 @@ function frame(now) {
   const dh = document.documentElement.scrollHeight - vh;
 
   // Reading progress
-  progress.style.width = Math.min(100, (sy / dh) * 100) + '%';
+  scrollProgress.style.width = Math.min(100, (sy / dh) * 100) + '%';
 
   // Hero opacity fade on scroll
   const heroFade = Math.max(0, 1 - sy / (vh * 0.75));
-  plStage.style.opacity = heroFade;
+  heroNameStage.style.opacity = heroFade;
 
-  mast.classList.toggle('on', sy > 60);
+  siteHeader.classList.toggle('is-visible', sy > 60);
 
   // Hero parallax + entrance for each layer
   layerEls.forEach((el, i) => {
@@ -85,12 +85,12 @@ function frame(now) {
   });
 
   // Image-in-frame parallax
-  arts.forEach(art => {
-    const rect = art.getBoundingClientRect();
+  projectImages.forEach(img => {
+    const rect = img.getBoundingClientRect();
     if (rect.bottom < -200 || rect.top > vh + 200) return;
     const center = rect.top + rect.height / 2 - vh / 2;
-    const speed = parseFloat(art.dataset.pspeed) || 0.08;
-    art.style.transform = `translateY(${-center * speed}px)`;
+    const speed = parseFloat(img.dataset.parallaxSpeed) || 0.08;
+    img.style.transform = `translateY(${-center * speed}px)`;
   });
 
   requestAnimationFrame(frame);
@@ -111,7 +111,7 @@ function splitNode(node) {
           out.appendChild(document.createTextNode(p));
         } else {
           const s = document.createElement('span');
-          s.className = 'rw';
+          s.className = 'reveal-word';
           s.textContent = p;
           out.appendChild(s);
         }
@@ -132,7 +132,7 @@ document.querySelectorAll('.split-words').forEach(el => {
   const frag = splitNode(el);
   el.innerHTML = '';
   el.appendChild(frag);
-  el.querySelectorAll('.rw').forEach((w, i) => {
+  el.querySelectorAll('.reveal-word').forEach((w, i) => {
     w.style.transitionDelay = `${i * 0.08}s`;
   });
 });
@@ -140,7 +140,7 @@ document.querySelectorAll('.split-words').forEach(el => {
 // ════════════════════════════════════════════════════════════
 // MAGNETIC HOVER on all internal links (subtle)
 // ════════════════════════════════════════════════════════════
-document.querySelectorAll('.plate-link, .cn-col a, .mast-r a').forEach(el => {
+document.querySelectorAll('.project-link, .contact-column a, .site-nav a').forEach(el => {
   el.addEventListener('mousemove', e => {
     const r = el.getBoundingClientRect();
     const dx = e.clientX - (r.left + r.width  / 2);
@@ -153,16 +153,16 @@ document.querySelectorAll('.plate-link, .cn-col a, .mast-r a').forEach(el => {
 // ════════════════════════════════════════════════════════════
 // SCROLL REVEAL — bidirectional (rewinds on scroll up)
 // ════════════════════════════════════════════════════════════
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('on');
-      e.target.querySelectorAll?.('.split-words').forEach(w => w.classList.add('on'));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      entry.target.querySelectorAll?.('.split-words').forEach(w => w.classList.add('is-visible'));
     } else {
-      e.target.classList.remove('on');
-      e.target.querySelectorAll?.('.split-words').forEach(w => w.classList.remove('on'));
+      entry.target.classList.remove('is-visible');
+      entry.target.querySelectorAll?.('.split-words').forEach(w => w.classList.remove('is-visible'));
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.rv, .split-words, .pull-q, .divider').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal, .split-words, .pull-quote, .section-divider').forEach(el => observer.observe(el));
