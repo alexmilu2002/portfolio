@@ -161,8 +161,8 @@ section{position:relative;z-index:5}
 @media(min-width:769px){
   .project.wide-image:not(.reverse){grid-template-columns:1.2fr 1fr}
   .project.wide-image.reverse{grid-template-columns:1fr 1.2fr}
-  /* Mensenkenners' and FilmSeeker's screenshots are a flatter ratio than Smart Drive's, so
-     they need extra width to render at the same visual height as the text column beside them */
+  /* Mensenkenners' and FilmSeeker's screenshots are a flatter ratio than the other
+     wide-image cases, so they need extra width to render at the same visual height as the text column beside them */
   #project-mensenkenners.wide-image.reverse{grid-template-columns:1fr 1.7fr}
   #project-filmseeker.wide-image:not(.reverse){grid-template-columns:1.7fr 1fr}
   #project-seesound.wide-image.reverse{grid-template-columns:1fr 1.4fr}
