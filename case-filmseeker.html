@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FilmSeeker · Alex Milu</title>
+<meta name="description" content="Case study: FilmSeeker, a movie discovery platform, by Alex Milu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header is-visible" id="siteHeader">
+  <a href="index.html" class="site-logo">Portfolio</a>
+  <nav class="site-nav">
+    <a href="index.html#about">About</a>
+    <a href="index.html#works">Works</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="case-study">
+  <a href="index.html#works" class="case-back">← Back to portfolio</a>
+
+  <section class="case-head">
+    <span class="section-label reveal">Case II</span>
+    <h1 class="split-words"><em>FilmSeeker</em><strong>Movie discovery platform.</strong></h1>
+    <div class="project-meta reveal">
+      <span>Duration<strong>6 weeks</strong></span>
+      <span>Type<strong>Front-end development &amp; APIs</strong></span>
+      <span>Tools<strong>JavaScript, TMDB API, OpenWeather API</strong></span>
+    </div>
+  </section>
+
+  <section class="case-media reveal">
+    <div class="case-grid">
+      <img src="images/filmseeker1.png" alt="FilmSeeker homepage: weather-based movie recommendations and carousel">
+      <img src="images/filmseeker2.png" alt="FilmSeeker movie detail page for Avatar: Fire and Ash, with rating, overview, and where to stream">
+    </div>
+    <div class="case-cap">
+      <em>Weather-based homepage and a dynamic movie detail page.</em>
+      <span>Fig. 02</span>
+    </div>
+  </section>
+
+  <section class="case-body">
+    <p class="reveal">FilmSeeker was a solo project for a course all about working with APIs and outside data sources. The brief was to combine multiple APIs into one cohesive experience, and I built it out of my own frustration with hopping between five different streaming apps just to find something to watch. The idea: search for movies, get recommendations based on the weather outside, and immediately see where you can actually stream them.</p>
+    <p class="reveal">I started by digging into different APIs and figuring out how they'd actually work together. I ended up going with The Movie Database (TMDB) for all the film data, OpenWeather for live weather, and the browser's own Geolocation API to personalize things automatically. Before writing any code I sketched wireframes and tried out a few visual directions to lock down a look before diving in.</p>
+    <p class="reveal">The core feature is the weather-based recommendations. Instead of just showing you what's popular, FilmSeeker leans into the mood of the day: rainy weather nudges you toward thrillers, sunny days pull up comedies and feel-good picks. Geolocation grabs your location automatically, that feeds into OpenWeather, and the recommended genre updates without you touching anything. Getting those two APIs talking to each other smoothly was probably the hardest part of the whole project, but it taught me a lot about async data and juggling multiple requests.</p>
+    <p class="reveal">Each movie also gets its own detail page, pulled in dynamically by ID, with ratings, descriptions, and where to stream it. I built the nav and footer as reusable components too, so the codebase didn't turn into a mess of copy-pasted markup.</p>
+    <p class="reveal">Past the functionality, I spent real time on the feel of it: a responsive layout, hover animations, and a horizontally scrolling movie carousel using CSS Scroll Snap for that smooth, snap-to-card feel. Small details, but they make the whole thing feel a lot less like a school project.</p>
+    <p class="reveal">This one leveled up my understanding of APIs, async JavaScript, and browser APIs in general, and gave me a real taste of the messy parts too: rate limits, awkward data shapes, keeping state in sync. Biggest lesson though: get a solid foundation working first before you start bolting on features. Saved me a lot of headaches later in the project.</p>
+  </section>
+
+  <nav class="case-nav reveal">
+    <a href="case-mensenkenners.html" class="project-link">← Mensenkenners</a>
+    <a href="case-seesound.html" class="project-link">Next: SeeSound →</a>
+  </nav>
+</main>
+
+<footer>
+  <span>© Alex Milu</span>
+  <span>End of Portfolio</span>
+</footer>
+<script src="case.js" defer></script>
+</body>
+</html>
