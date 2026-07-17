@@ -1,243 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex Milu Portfolio</title>
-<meta name="description" content="UX/UI &amp; front-end portfolio by Alex Milu.">
+<title>Nadia Harrak | Dagboek</title>
+<meta name="description" content="Het dagelijks leven, opgemerkt en opgeschreven, een dagboek van Nadia Harrak.">
 
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231c1620'/%3E%3Ctext x='50' y='69' font-size='58' font-family='Georgia,serif' font-style='italic' fill='%233d6ea5' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="load-curtain"></div>
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<header class="site-header" id="siteHeader">
-  <a href="#" class="site-logo">Portfolio</a>
+<header class="site-header">
+  <a href="#" class="site-logo"><span class="logo-full">Nadia Harrak</span><span class="logo-short">NH</span></a>
   <nav class="site-nav">
-    <a href="#about">About</a>
-    <a href="#works">Works</a>
+    <a href="#about">Over mij</a>
+    <a href="blog.html">Blogs</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section id="hero">
-
-  <div class="hero-name-stage" id="heroNameStage">
-    <div class="hero-name-layer" data-layer="0"><span class="hero-name-text hero-name-first">Alex</span><span class="hero-name-text hero-name-last">Milu</span></div>
-    <div class="hero-name-layer" data-layer="1"><span class="hero-name-text hero-name-first">Alex</span><span class="hero-name-text hero-name-last">Milu</span></div>
-    <div class="hero-name-layer" data-layer="2"><span class="hero-name-text hero-name-first">Alex</span><span class="hero-name-text hero-name-last">Milu</span></div>
-    <div class="hero-name-layer" data-layer="3">
-      <span class="hero-name-text hero-name-first" data-letters>Alex</span>
-      <div class="hero-name-divider"></div>
-      <span class="hero-name-text hero-name-last" data-letters>Milu</span>
-    </div>
-    <div class="hero-name-layer" data-layer="4">
-      <svg class="hero-ink-svg" viewBox="0 0 1200 320" width="clamp(64vw,74vw,980px)" xmlns="http://www.w3.org/2000/svg"><text x="600" y="230" text-anchor="middle" style="font-size:280px;letter-spacing:-7px">Alex</text></svg>
-      <svg class="hero-ink-svg" viewBox="0 0 1200 320" width="clamp(64vw,74vw,980px)" xmlns="http://www.w3.org/2000/svg" style="margin-top:-.05em"><text x="600" y="230" text-anchor="middle" font-style="italic" style="font-size:280px;letter-spacing:-7px">Milu</text></svg>
-    </div>
+  <div class="wrap hero-intro">
+    <span class="eyebrow">Mijn Journey</span>
+    <h1 class="hero-title"><span>Nadia</span> <em>Harrak</em></h1>
+    <p class="hero-tagline">Ideeën die blijven hangen.</p>
+    <a href="#posts" class="hero-cta">Lees de laatste blogs ↓</a>
   </div>
-
 </section>
-
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="about-wrap">
-    <div class="about-head reveal">
-      <span class="section-label">About</span>
-      <h2 class="split-words"><em>On craft,</em><br><strong>and intuition.</strong></h2>
-    </div>
-
-    <div class="about-grid">
-      <aside class="about-stats reveal">
-        <div><span>Focus</span><strong>UX/UI &amp; front-end</strong></div>
-        <div><span>Tools</span><strong> HTML, CSS, JS, Adobe XD, Adobe Illustrator, Figma, Canva, Miro, Trello, Arduino</strong></div>
-        <div><span>Methods</span><strong>Research, prototyping, testing, accessibility</strong></div>
-        <div><span>Based</span><strong>Amsterdam, NL</strong></div>
-        <div><span>Available</span><strong>Internships &amp; collaboration</strong></div>
-      </aside>
-      <div class="about-intro reveal">
-        <figure class="about-photo"><img src="images/pfp.jpg" alt="Portrait of Alex Milu"></figure>
-        <p><span class="about-lead-letter">H</span>ello! I'm Alex, a 24-year-old fourth-year Communication and Multimedia Design (CMD) student with a passion for UX/UI design, front-end development, and creating user-centered digital experiences. Before starting my current degree, I studied Software Development for one year at the Utrecht University of Applied Sciences (HU), which gave me a solid technical foundation that complements my design skills.</p>
-      </div>
-      <div class="about-text reveal reveal-delay-1">
-        <p>During my studies, I have worked on projects involving responsive web design, UX research, prototyping, and front-end development using HTML, CSS, JavaScript, and Adobe XD. I enjoy turning ideas into intuitive, accessible, and visually appealing digital products while continuously learning and improving my skills.</p>
-        <p>Outside of my studies, I enjoy illustrating, listening to music, discovering new things, and gaming. These hobbies inspire my creativity and curiosity, both of which influence my approach to design.</p>
-        <p>I am currently looking for an internship where I can further develop my skills, contribute to meaningful projects, and gain valuable experience in a professional environment.</p>
+<section id="about" class="section alt">
+  <div class="wrap about-layout">
+    <div class="reveal">
+      <div class="photo-circle-wrap">
+        <div class="photo-circle-ring"></div>
+        <div class="photo-circle"><span>NH</span></div>
       </div>
     </div>
-
-    <blockquote class="pull-quote reveal split-words">
-      Design is the discipline of attention<em>.</em> To make something well is to look at it longer than is comfortable.
-    </blockquote>
+    <div class="reveal">
+      <span class="eyebrow">Over mij</span>
+      <h2 class="section-title">Hardop denken, in het openbaar.</h2>
+      <div class="prose" style="margin-top:1.5rem">
+        <p>Hoi, ik ben Nadia. Hier schrijf ik over de gewone dingen, de kleine momenten, de routines, de losse gedachtes die in mijn hoofd blijven hangen, meestal het dagelijks leven, soms grotere dingen.</p>
+        <p>Ik ben dit dagboek begonnen om beter op te letten bij het alledaagse. Minder gepolijste lessen, meer van het echte leven, de gewone dinsdagen, de kleine inzichten, de dingen die niet in een highlight reel passen.</p>
+        <p>Als iets hier herkenbaar is, of je wilt gewoon even gedag zeggen, neem contact op, de gegevens staan hieronder.</p>
+      </div>
+    </div>
+    <blockquote class="quote reveal">"Schrijven is gewoon denken, vertraagd genoeg om te merken wat je eigenlijk gelooft."</blockquote>
   </div>
 </section>
 
-<div class="section-divider reveal"><div class="divider-line"></div><span>✦</span><div class="divider-line reverse"></div></div>
+<!-- LATEST POSTS -->
+<section id="posts" class="section">
+  <div class="wrap">
+    <span class="eyebrow">Nieuwste Blogs</span>
+    <h2 class="section-title">Uit het dagboek.</h2>
 
-<!-- WORKS -->
-<section id="works">
-  <div class="works-wrap">
-    <div class="works-head reveal">
-      <span class="section-label">Selected Works</span>
-      <h2 class="split-words"><em>Case I - V</em></h2>
+    <div class="post-grid">
+      <a href="post-1.html" class="post-card">
+        <div class="post-card-number">01</div>
+        <h3>Over beginnen voordat je er klaar voor bent</h3>
+        <p>Wachten tot je je er klaar voor voelt is zelf ook een vorm van uitstellen. Een paar gedachtes over gewoon beginnen, de dag, de gewoonte, het gesprek.</p>
+        <div class="post-card-meta">
+          <span class="post-date">12 jul. 2026</span>
+        </div>
+      </a>
+
+      <a href="post-2.html" class="post-card">
+        <div class="post-card-number">02</div>
+        <h3>Notities over trage ochtenden</h3>
+        <p>Wat er verandert als je je ochtend een uur geeft in plaats van tien minuten, en waarom dat moeilijker is dan het klinkt.</p>
+        <div class="post-card-meta">
+          <span class="post-date">3 jul. 2026</span>
+        </div>
+      </a>
+
+      <a href="post-3.html" class="post-card">
+        <div class="post-card-number">03</div>
+        <h3>Wat een jaar openbaar schrijven me heeft geleerd</h3>
+        <p>Twaalf maanden lang op publiceren klikken voordat ik er klaar voor voelde. Dit is wat er echt is veranderd.</p>
+        <div class="post-card-meta">
+          <span class="post-date">21 jun. 2026</span>
+        </div>
+      </a>
     </div>
 
-    <article class="project reverse reveal wide-image" id="project-mensenkenners">
-      <div class="project-numeral">I</div>
-      <div class="project-image-wrap">
-        <div class="project-image" style="aspect-ratio:1917/907">
-          <div class="project-image-frame">
-            <div class="project-image-inner" data-parallax-speed="0.04">
-              <img src="images/mensenkenners1.png" alt="Mensenkenners dashboard: course overview with progress tracking" class="project-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-text">
-        <span class="project-label">Case I</span>
-        <h3>Mensenkenners, <em> inclusive learning platform.</em></h3>
-        <div class="project-meta">
-          <span>Duration<strong>10 weeks</strong></span>
-          <span>Type<strong>UX design &amp; full-stack development</strong></span>
-          <span>Tools<strong>HTML, CSS, JavaScript, Supabase, JSON</strong></span>
-        </div>
-        <a href="case-mensenkenners.html" class="project-link">Read the full case →</a>
-      </div>
-    </article>
-
-    <article class="project reveal wide-image" id="project-filmseeker">
-      <div class="project-numeral">II</div>
-      <div class="project-image-wrap">
-        <div class="project-image" style="aspect-ratio:1870/887">
-          <div class="project-image-frame">
-            <div class="project-image-inner" data-parallax-speed="0.04">
-              <img src="images/filmseeker1.png" alt="FilmSeeker homepage: weather-based movie recommendations and carousel" class="project-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-text">
-        <span class="project-label">Case II</span>
-        <h3>FilmSeeker, <em> movie discovery platform.</em></h3>
-        <div class="project-meta">
-          <span>Duration<strong>6 weeks</strong></span>
-          <span>Type<strong>Front-end development &amp; APIs</strong></span>
-          <span>Tools<strong>HTML, CSS, JavaScript, TMDB API, OpenWeather API, Render</strong></span>
-        </div>
-        <a href="case-filmseeker.html" class="project-link">Read the full case →</a>
-      </div>
-    </article>
-
-    <article class="project reverse reveal wide-image" id="project-seesound">
-      <div class="project-numeral">III</div>
-      <div class="project-image-wrap">
-        <div class="project-image" style="aspect-ratio:1760/905">
-          <div class="project-image-frame">
-            <div class="project-image-inner" data-parallax-speed="0.04">
-              <img src="images/seesound1.png" alt="SeeSound main screen: podcast player with speaker guide and transcript access" class="project-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-text">
-        <span class="project-label">Case III</span>
-        <h3>SeeSound, <em> human-centered design.</em></h3>
-        <div class="project-meta">
-          <span>Duration<strong>6 weeks</strong></span>
-          <span>Type<strong>UX design &amp; accessibility research</strong></span>
-          <span>Tools<strong>HTML, CSS, Javascript</strong></span>
-        </div>
-        <a href="case-seesound.html" class="project-link">Read the full case →</a>
-      </div>
-    </article>
-
-    <article class="project reverse reveal" id="project-louisvuitton">
-      <div class="project-numeral">IV</div>
-      <div class="project-image-wrap">
-        <div class="project-image" style="aspect-ratio:472/906;max-width:280px;margin:0 auto">
-          <div class="project-image-frame">
-            <div class="project-image-inner" data-parallax-speed="0.04">
-              <img src="images/LouisVuitton1.png" alt="Louis Vuitton coded homepage, Holiday Gifts hero carousel" class="project-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-text">
-        <span class="project-label">Case IV</span>
-        <h3>Louis Vuitton, <em> accessible front-end.</em></h3>
-        <div class="project-meta">
-          <span>Duration<strong>6 weeks</strong></span>
-          <span>Type<strong>Front-end &amp; accessibility</strong></span>
-          <span>Tools<strong>HTML, CSS, JavaScript</strong></span>
-        </div>
-        <a href="case-louisvuitton.html" class="project-link">Read the full case →</a>
-      </div>
-    </article>
-
-    <article class="project reveal" id="project-nightshift">
-      <div class="project-numeral">V</div>
-      <div class="project-image-wrap">
-        <div class="project-image" style="aspect-ratio:712/537">
-          <div class="project-image-frame">
-            <div class="project-image-inner" data-parallax-speed="0.04">
-              <img src="images/NightShift1.png" alt="NightShift physical prototype, a lit cityscape artwork with a remote control" class="project-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-text">
-        <span class="project-label">Case V</span>
-        <h3>NightShift, <em> a tangible habit tracker.</em></h3>
-        <div class="project-meta">
-          <span>Duration<strong>8 weeks</strong></span>
-          <span>Type<strong>UX design &amp; prototyping</strong></span>
-          <span>Tools<strong>Arduino, laser cutter</strong></span>
-        </div>
-        <a href="case-nightshift.html" class="project-link">Read the full case →</a>
-      </div>
-    </article>
+    <a href="blog.html" class="text-link" style="margin-top:2rem">Bekijk alle blogs →</a>
   </div>
 </section>
-
-<div class="section-divider reveal"><div class="divider-line"></div><span>✦</span><div class="divider-line reverse"></div></div>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="contact-wrap">
-    <div class="contact-head reveal">
-      <span class="section-label">Contact</span>
-      <h2 class="split-words"><em>Write to me,</em><br><strong>about anything.</strong></h2>
-    </div>
+<section id="contact" class="section alt">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 class="section-title">Bericht me, over van alles.</h2>
 
-    <div class="contact-grid">
-      <div class="contact-column reveal">
+    <div class="contact-cols">
+      <div class="contact-col reveal">
         <h4>Direct</h4>
-        <a href="mailto:alexandrumilu2002@gmail.com">alexandrumilu2002@gmail.com</a>
-        <a href="mailto:alex.milu@hva.nl">alex.milu@hva.nl</a>
-        <a href="tel:+31628270269">+31 628270269</a>
+        <a href="mailto:hello@nadiaharrak.com">hello@nadiaharrak.com</a>
       </div>
-      <div class="contact-column reveal reveal-delay-1">
-        <h4>Elsewhere</h4>
-        <a href="https://www.instagram.com/alex_milu/">Instagram <em>@alex_milu</em></a>
-        <a href="https://www.linkedin.com/in/alex-milu-3b8a44358/">LinkedIn <em>in/alex-milu</em></a>
-        <a href="https://github.com/alexmilu2002">GitHub <em>alexmilu2002</em></a>
+      <div class="contact-col reveal">
+        <h4>Elders</h4>
+        <a href="#">LinkedIn <em>in/nadiaharrak</em></a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <span>© Alex Milu</span>
-  <span>End of Portfolio</span>
+  <span>© Nadia Harrak - 2026</span>
+  <span>Made by Alex Milu</span>
 </footer>
 <script src="script.js" defer></script>
 </body>

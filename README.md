@@ -1,77 +1,59 @@
-# Alex Milu — Portfolio
+# Nadia Harrak — Journal
 
-A personal portfolio website with an editorial magazine aesthetic and a multi-layer parallax name animation on the landing page.
+A personal blog/journal site with a warm editorial look — a sibling to the portfolio aesthetic, reworked with a plum/berry palette and a calmer, magazine-style layout.
 
 ## Structure
 
 ```
-alex-milu-portfolio/
-├── index.html      # Markup
-├── styles.css      # All styles
-├── script.js       # All animations and interactivity
-├── images/         # Project photos
-│   ├── autoinsight-desktop.png
-│   ├── autoinsight-mobile.png
-│   ├── lv-holiday.png
-│   ├── lv-product.png
-│   ├── nightshift-prototype.png
-│   ├── nightshift-arduino.png
-│   └── nightshift-storyboard.png
+nadiaharrak/
+├── index.html      # Landing page: hero, about, latest posts, contact
+├── blog.html        # Full archive of all posts
+├── post-1.html      # Sample post
+├── post-2.html      # Sample post
+├── post-3.html      # Sample post
+├── styles.css       # All styles
+├── script.js        # Animations and interactivity
+├── images/          # Drop post/author photos here
 └── README.md
 ```
 
+Post cover images are CSS gradient tiles (no image files needed) so new posts work immediately — swap in real photos later by adding an `<img>` inside `.post-cover` / `.post-cover-banner`.
+
 ## Running locally
 
-The site is plain HTML/CSS/JS, so there is no build step. Two options:
-
-**Option 1 — open the file directly**
-Double-click `index.html`. This works, but browsers can be strict with local file paths.
-
-**Option 2 — run a tiny local server (recommended)**
-Open a terminal in the project folder and run one of these:
+Plain HTML/CSS/JS, no build step.
 
 ```bash
-# Python 3 (already installed on most systems)
 python3 -m http.server 8000
-
-# or Node
+# or
 npx serve
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then open `http://localhost:8000`.
 
-## Deploying
+## Adding a new post
 
-Any static host will work:
-
-- **Netlify** — drag the folder onto app.netlify.com
-- **Vercel** — `vercel` in the project folder, or import from GitHub
-- **GitHub Pages** — push to a repo, then Settings → Pages → deploy from main branch
-- **Cloudflare Pages** — connect your GitHub repo
-
-## Creating a GitHub repo
-
-```bash
-cd alex-milu-portfolio
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/alex-milu-portfolio.git
-git push -u origin main
-```
+1. Duplicate `post-1.html` and rename it (e.g. `post-4.html`).
+2. Update the `<title>`, meta description, `post-meta` (tag/date/read time), heading, and body copy.
+3. Add a matching card to the `post-grid` in `blog.html`, and optionally to the "Latest" grid in `index.html`.
+4. Update the `post-nav` prev/next links on the posts you're connecting to the new one.
 
 ## Editing content
 
-- **Text** — all copy lives in `index.html`. Search for `Plate I`, `Plate II`, `Plate III` to find each project block.
-- **Images** — drop new photos into the `images/` folder and update the `src=""` in the corresponding `<img>` tag.
-- **Colours & fonts** — the CSS variables at the top of `styles.css` (under `:root`) control the palette (paper, ink, accent) and font families.
-- **Animations** — everything animation-related is in `script.js`, organised into commented sections (hero parallax, letter splitter, word splitter, magnetic hover, scroll reveal).
+- **Text** — copy lives directly in each `.html` file.
+- **Colours & fonts** — CSS variables at the top of `styles.css` (under `:root`).
+- **Animations** — all in `script.js` (hero letter entrance, scroll reveal, word splitter, magnetic hover).
+- **Contact links** — placeholder email/social links live in the `#contact` section of `index.html`; replace with real ones.
+
+## Deploying
+
+- **GitHub Pages** — push to a repo, then Settings → Pages → deploy from main branch.
+- **Netlify / Vercel / Cloudflare Pages** — connect the repo or drag the folder in.
 
 ## Fonts
 
-Loaded from Google Fonts via CDN — no local files required. The site uses Fraunces (display), EB Garamond (body), and DM Mono (labels).
+Fraunces (display), EB Garamond (body), DM Mono (labels) — loaded from Google Fonts, no local files required.
 
 ---
 
-© Alex Milu, MMXXV
+© Nadia Harrak
